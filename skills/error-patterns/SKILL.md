@@ -30,6 +30,14 @@ Adjust `--days` if the user specifies a different time range. Capture stdout (JS
 
 If the user wants to exclude noisy categories (like `generic_exit_code` or `generic_error`), add `--exclude generic_exit_code,generic_error`.
 
+**Project filtering:** If the user provides keywords after `/error-patterns` (e.g. `/error-patterns code assistant`), scope the analysis to a specific project:
+
+1. List directories under `~/.claude/projects/`
+2. Find the one(s) whose name contains ALL the given keywords (case-insensitive). The directory names use `-` as separators (e.g. `-Users-<username>-code-assistant`).
+3. If exactly one match, add `--projects-dir ~/.claude/projects/<match>/` to the command.
+4. If multiple matches, show them to the user and ask which one to use.
+5. If no match, tell the user and fall back to scanning all projects.
+
 ### Step 2: Present Results
 
 Parse the JSON output. Present two sections:
