@@ -1,0 +1,8 @@
+{
+  "name": "claude-error-patterns",
+  "description": "Analyze Claude Code session logs to find recurring fail-then-fix patterns and wheel-spinning loops, then propose CLAUDE.md rules to prevent them.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ben Weisburd"
+  }
+}
